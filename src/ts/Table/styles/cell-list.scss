@@ -1,0 +1,24 @@
+.table-cell {
+  &--list {
+    &-title,
+    &-more {
+      font-size: var(--font-size-s);
+      display: block;
+    }
+
+    &-title {
+      margin: 0 0 var(--space-xs) 0;
+    }
+
+    &-number {
+      display: inline-block;
+      margin: 0 0 0 var(--space-xs);
+      color: var(--color-red-60);
+    }
+
+    &-more {
+      color: var(--color-blue-70);
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,222 @@
+@import './cell-list.scss';
+@import './hacks.scss';
+
+.table {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  box-sizing: border-box;
+  background-color: var(--color-grey-white);
+
+  &-sticky-wrapper {
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    background-color: var(--color-grey-white);
+    transition: box-shadow 0.3s;
+  }
+
+  &-filler {
+    display: flex;
+    flex: 1 1 auto;
+    width: unset;
+  }
+
+  &-resize-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100;
+    z-index: 2;
+    display: none;
+    width: 2px;
+    background-color: rgb(224, 242, 255);
+  }
+
+  &-cell {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px 13px 9px 12px;
+    box-sizing: border-box;
+
+    &--checkbox {
+      display: inline-block;
+    }
+
+    &--string {
+      display: block;
+      align-items: center;
+      overflow: hidden;
+      width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: left;
+    }
+
+    &--menu {
+      justify-content: flex-end;
+      padding-left: 4px;
+    }
+
+    &--dropdown {
+      display: flex;
+      justify-items: flex-start;
+      min-width: 250px !important;
+    }
+
+    &--link {
+      text-decoration: none;
+    }
+
+    &--expand {
+      &-button {
+        padding: 10px 5px 9px;
+        cursor: pointer;
+      }
+      &-icon {
+        display: inline-block;
+        width: var(--space-25);
+        height: var(--space-25);
+      }
+    }
+
+    &--locked-icon {
+      display: inline-block;
+      width: var(--space-25);
+      height: var(--space-25);
+      margin-top: var(--space-xs);
+    }
+  }
+
+  &-header {
+    position: relative;
+
+    &-wrapper {
+      display: flex;
+      flex: 0 0 auto;
+      height: var(--space-56);
+      box-sizing: border-box;
+    }
+
+    &-resize-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 17px;
+      height: 100%;
+      box-sizing: border-box;
+      cursor: col-resize;
+      user-select: none;
+    }
+
+    &-resize-handler {
+      width: 1px;
+      height: 20px;
+      box-sizing: border-box;
+      background-color: #C4CAD4;
+      cursor: col-resize;
+    }
+
+    &-cell {
+      position: relative;
+      font-weight: var(--font-weight-xl);
+      font-size: var(--font-size-s);
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      overflow: hidden;
+      padding: 10px 13px 9px 12px;
+      &:hover {
+        cursor: pointer;
+      }
+      &-content {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      &-title {
+        display: inline-flex;
+        align-items: flex-start;
+        overflow: hidden;
+        width: 100%;
+        margin-right: 10px;
+      }
+      &-title-content {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+      }
+      &-title-text {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      &-sort-icon {
+        display: inline-block;
+        width: var(--space-xl);
+        height: var(--space-xl);
+        transform: rotate(90deg);;
+      }
+      &-spacer {
+        display: flex;
+        flex-shrink: 0;
+        align-self: stretch;
+        width: 10px;
+        height: 100%;
+      }
+    }
+  }
+
+  &-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+
+    &-row {
+      font-size: var(--font-size-s);
+      display: flex;
+      flex-direction: column;
+      min-width: fit-content;
+      color: var(--color-grey-black);
+      border-bottom: 1px solid var(--color-grey-20);
+
+      &-simple {
+        display: inline-flex;
+        min-width: max-content;
+        height: var(--space-56);
+        background-color: var(--color-grey-white);
+        cursor: pointer;
+      }
+
+      &-expanded {
+        display: inline-flex;
+        overflow: hidden;
+        height: auto;
+        max-height: 90vh;
+        padding: 16px;
+        border-top: var(--space-xl) solid rgb(224, 242, 255);
+        border-right: var(--space-xl) solid rgb(224, 242, 255);
+        border-bottom: var(--space-xl) solid rgb(224, 242, 255);
+        border-left: var(--space-xl) solid rgb(224, 242, 255);
+        transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        &-content {
+          flex: 1 1 auto;
+          padding: 0 12px 11px;
+        }
+      }
+    }
+  }
+}

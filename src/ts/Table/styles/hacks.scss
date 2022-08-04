@@ -1,0 +1,90 @@
+.table {
+  &-sticky-wrapper {
+    [data-shadow='true'] & { // stylelint-disable-line
+      box-shadow: 4px 0 12px rgba(138, 150, 168, 0.16);
+    }
+  }
+
+  &-header {
+    &-wrapper {
+      & > * { // stylelint-disable-line
+        border-top: 1px solid var(--color-grey-20);
+        border-bottom: 1px solid var(--color-grey-20);
+      }
+    }
+  }
+
+  &-body {
+    &-row {
+      div[data-selected='true'] { // stylelint-disable-line
+        background-color: rgb(224, 242, 255);
+      }
+    }
+  }
+
+  &-cell {
+    &--checkbox.master { // stylelint-disable-line
+      > label { // stylelint-disable-line
+        position: static;
+        > div:nth-child(1) { // stylelint-disable-line
+          top: 20px;
+          left: 14px;
+        }
+      }
+    }
+
+    &--expand {
+      &-button {
+        > svg[data-opened='true'] { // stylelint-disable-line
+          transition: transform 0.3s ease-in-out 0s;
+          transform: rotate(180deg);
+        }
+        > svg[data-opened='false'] { // stylelint-disable-line
+          transition: transform 0.3s ease-in-out 0s;
+          transform: rotate(0deg);
+        }
+      }
+      &-icon path { // stylelint-disable-line
+        fill: var(--color-grey-40);
+      }
+      &-icon {
+        &:hover path { // stylelint-disable-line
+          fill: rgb(10, 84, 194);
+        }
+      }
+    }
+
+    &--dropdown {
+      > button[data-appearance~='ghost']:focus { // stylelint-disable-line
+        background-color: inherit !important;
+        border: none !important;
+      }
+      > button[data-appearance~='ghost']:hover { // stylelint-disable-line
+        background-color: inherit !important;
+        border: none !important;
+      }
+      > button[data-appearance~='ghost'] { // stylelint-disable-line
+        border: none !important;
+      }
+      > button[data-dimension='s'] { // stylelint-disable-line
+        padding: var(--space-xs) !important;
+        padding-left: 0 !important;
+      }
+      > button { // stylelint-disable-line
+        > span { // stylelint-disable-line
+          flex-direction: row-reverse;
+        }
+        > span > svg { // stylelint-disable-line
+          margin-right: var(--space-sm);
+          margin-left: 0 !important;
+          fill: var(--color-grey-55) !important;
+        }
+      }
+      & > button[data-appearance="primary"]> span > svg > path{// stylelint-disable-line
+        fill: var(--color-grey-white) !important;
+      }
+    }
+  }
+}
+
+
