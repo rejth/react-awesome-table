@@ -27,7 +27,7 @@ This is pretty simple responsive Table with:
 Prerequisites:
 
 - Node 16+
-- npm
+- npm 5+
 
 To set up the app execute the following commands.
 
