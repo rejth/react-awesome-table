@@ -1,5 +1,7 @@
 # 💻 Table component overview
 
+[Demo](https://rejth.github.io/react-awesome-table/)
+
 This is pretty simple responsive Table with:
   * Resizing
   * Drag-and-Drop
