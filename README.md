@@ -1,7 +1,5 @@
 # 💻 Table component overview
 
-[Demo](https://rejth.github.io/react-awesome-table/)
-
 This is pretty simple responsive Table with:
   * Resizing
   * Drag-and-Drop
@@ -9,6 +7,8 @@ This is pretty simple responsive Table with:
   * Row selection
   * Sticky columns
   * Overflow menu
+  
+[Demo](https://rejth.github.io/react-awesome-table/)
 
 ## 🛠 Fronend:
   * React + React Hooks
