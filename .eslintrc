@@ -4,7 +4,6 @@
     "node": true,
     "es2021": true
   },
-
   "plugins": [
     "react", // @eslint-plugin-react
     "react-hooks", // @eslint-plugin-react-hooks
@@ -14,7 +13,6 @@
     "jest", // @eslint-plugin-jest
     "jest-dom" // @eslint-plugin-jest-dom
   ], // Turn on the plugins and peer plugins
-
   "extends": [
     "airbnb", // Use the recommended rules from @eslint-config-airbnb
     "airbnb-typescript", // Extends prevouos rules by rules from @eslint-config-airbnb-typescript
@@ -24,7 +22,6 @@
     "plugin:jest/recommended", // Extends prevouos rules by recommended rules from @eslint-plugin-jest
     "plugin:jest-dom/recommended" // Extends prevouos rules by recommended rules from @eslint-plugin-jest-dom
   ],
-
   "parser": "@typescript-eslint/parser", // Specifies the ESLint parser
   "parserOptions": {
     "project": "./tsconfig.json", // Source file for @typescript-eslint/parser
@@ -36,7 +33,6 @@
       "modules": true
     }
   },
-
   "rules": {
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/ban-types": "off",
@@ -50,13 +46,18 @@
         "peerDependencies": false
       }
     ],
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/jsx-props-no-spreading": "off",
-    "react/jsx-pascal-case": ["error"],
+    "react/jsx-pascal-case": [
+      "error"
+    ],
     "react/jsx-sort-props": [
       "error",
       {
@@ -64,7 +65,9 @@
         "ignoreCase": true,
         "callbacksLast": true,
         "shorthandLast": false,
-        "reservedFirst": ["key"]
+        "reservedFirst": [
+          "key"
+        ]
       }
     ],
     "react/jsx-max-props-per-line": [
@@ -75,12 +78,13 @@
       }
     ]
   },
-
-  "ignorePatterns": ["./node_modules/**", "./src/**/*.cjs"],
-
-  "settings":  {
-    "react":  {
-      "version":  "detect"  // Tells eslint-plugin-react to automatically detect the version of React to use
+  "ignorePatterns": [
+    "./node_modules/**",
+    "./src/**/*.cjs"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
     }
   }
 }
