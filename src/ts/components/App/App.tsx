@@ -6,17 +6,17 @@ import TableDataService from 'src/ts/services/TableDataService';
 import './index.scss';
 
 export interface AppProps {
-  tableDataService?: TableDataService | null;
+  dataService?: TableDataService | null;
 }
 
 function App(props: AppProps) {
-  const { tableDataService } = props;
-  const [data, setData] = React.useState([]);
+  const { dataService } = props;
+  const [data, setData] = React.useState<any[]>([]);
 
   React.useEffect(() => {
-    tableDataService?.getData()
-      .then((response: any) => setData(response));
-  });
+    dataService?.getData()
+      .then((response: any[]) => setData(response));
+  }, [dataService]);
 
   return (
     <div className="App">
@@ -29,7 +29,7 @@ function App(props: AppProps) {
         <p>
           There gonna be an awesome table built on React and TypeScript here
         </p>
-        {data.map((item: any) => (
+        {(data || []).map((item: any) => (
           <a
             key={item.id}
             className="App-link"

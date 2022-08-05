@@ -34,10 +34,14 @@
     }
   },
   "rules": {
+    "global-require": "off",
+    "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "react/jsx-no-useless-fragment": "off",
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
     "import/no-extraneous-dependencies": [
       "error",
       {

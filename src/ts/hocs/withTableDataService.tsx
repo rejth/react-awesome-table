@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { TableDataServiceConsumer } from 'src/ts/contexts/TableDataServiceContext';
 import TableDataService from 'src/ts/services/TableDataService';
 
@@ -6,10 +7,10 @@ function withTableServiceHoC<T extends {}>(Component: React.ComponentType<T>): R
   return function consumerWrapper(props: T) {
     return (
       <TableDataServiceConsumer>
-        {(tableDataService: TableDataService | null) => (
+        {(dataService: TableDataService | null) => (
           <Component
             {...props}
-            tableDataService={tableDataService}
+            dataService={dataService}
           />
         )}
       </TableDataServiceConsumer>
