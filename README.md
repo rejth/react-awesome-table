@@ -21,8 +21,8 @@ This is pretty simple responsive Table with:
   * Testing Library
   * Storybook
   
-## 🛠 Deployment (in progress):
-  * Heroku
+## 🛠 Deployment:
+  * GitHub Pages
 
 ## Get Started
 
