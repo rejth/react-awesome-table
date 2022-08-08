@@ -53,37 +53,6 @@
         }
       }
     }
-
-    &--dropdown {
-      > button[data-appearance~='ghost']:focus { // stylelint-disable-line
-        background-color: inherit !important;
-        border: none !important;
-      }
-      > button[data-appearance~='ghost']:hover { // stylelint-disable-line
-        background-color: inherit !important;
-        border: none !important;
-      }
-      > button[data-appearance~='ghost'] { // stylelint-disable-line
-        border: none !important;
-      }
-      > button[data-dimension='s'] { // stylelint-disable-line
-        padding: var(--space-xs) !important;
-        padding-left: 0 !important;
-      }
-      > button { // stylelint-disable-line
-        > span { // stylelint-disable-line
-          flex-direction: row-reverse;
-        }
-        > span > svg { // stylelint-disable-line
-          margin-right: var(--space-sm);
-          margin-left: 0 !important;
-          fill: var(--color-grey-55) !important;
-        }
-      }
-      & > button[data-appearance="primary"]> span > svg > path{// stylelint-disable-line
-        fill: var(--color-grey-white) !important;
-      }
-    }
   }
 }
 

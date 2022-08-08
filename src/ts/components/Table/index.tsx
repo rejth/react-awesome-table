@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
 
 import type { ITable } from './interfaces/Table';
@@ -30,6 +31,8 @@ function Table(props: ITable): JSX.Element | null {
     onRowClick,
     isBlockedRow,
   } = props;
+  if (!rows || !rows.length) return null;
+
   const columns = getColumnsWithProps(children);
   const tableConfig = getColumnConfigs(columns);
   const stickyColumns = [...tableConfig.config].filter((col) => col?.isFixed);
@@ -76,9 +79,8 @@ function Table(props: ITable): JSX.Element | null {
     window.addEventListener('resize', updateTableWidth);
     updateTableWidth();
     return () => window.removeEventListener('resize', updateTableWidth);
-  }, [tableConfig]);
-
-  if (!rows || !rows.length) return null;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const isSelected = (row: ITableRow) => row?.selected || false;
   const getRowId = (row: ITableRow) => row?.id;

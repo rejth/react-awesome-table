@@ -1,9 +1,10 @@
 import React from 'react';
 
-import logo from 'src/assets/logo.svg';
-import withTableDataServiceHoC from 'src/ts/hocs/withTableDataService';
+import { ColumnTypesEnum } from 'src/ts/components/Table/interfaces/Column';
 import TableDataService from 'src/ts/services/TableDataService';
-import './index.scss';
+import Table from 'src/ts/components/Table';
+import Column from 'src/ts/components/Table/components/Column';
+import withTableDataServiceHoC from 'src/ts/hocs/withTableDataService';
 
 export interface AppProps {
   dataService?: TableDataService | null;
@@ -18,29 +19,60 @@ function App(props: AppProps) {
       .then((response: any[]) => setData(response));
   }, [dataService]);
 
+  const handleRowExpansion = () => (<></>);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img
-          src={logo}
-          className="App-logo"
-          alt="logo"
+      <Table
+        rows={data}
+        onRowExpansionRender={handleRowExpansion}
+      >
+        <Column
+          template={ColumnTypesEnum.CHECKBOX}
+          properties={['']}
+          width={40}
+          isFixed
         />
-        <p>
-          There gonna be an awesome table built on React and TypeScript here
-        </p>
-        {(data || []).map((item: any) => (
-          <a
-            key={item.id}
-            className="App-link"
-            href={item.href}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {item.title}
-          </a>
-        ))}
-      </header>
+        <Column
+          template={ColumnTypesEnum.EXPAND}
+          properties={['']}
+          width={40}
+          isFixed
+        />
+        <Column
+          template={ColumnTypesEnum.STRING}
+          properties={['id']}
+          prefixes={['RA-']}
+          title="№ Заявки"
+          isSortable
+          isResizable
+          isDraggable
+        />
+        <Column
+          template={ColumnTypesEnum.STRING}
+          properties={['recipientFullName']}
+          title="Получатель доступа"
+          isSortable
+          isResizable
+          isDraggable
+        />
+        <Column
+          template={ColumnTypesEnum.STRING}
+          properties={['authorFullName']}
+          title="Инициатор"
+          isSortable
+          isResizable
+          isDraggable
+        />
+        <Column
+          template={ColumnTypesEnum.STRING}
+          properties={['formalName']}
+          title="Наименование шаблона"
+          isSortable
+          isResizable
+          isDraggable
+        />
+      </Table>
     </div>
   );
 }
