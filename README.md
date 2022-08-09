@@ -10,18 +10,18 @@ This is pretty simple responsive Table with:
   
 [Demo](https://rejth.github.io/react-awesome-table/)
 
-## 🛠 Fronend:
+## 🧱 Fronend:
   * React + React Hooks
   * TypeScript
   * SCSS
   * admiral-ds/react-ui
   
-## 🛠 Test (in progress):
+## 🧪 Test (in progress):
   * Jest
   * Testing Library
   * Storybook
   
-## 🛠 Deployment:
+## 🌐 Deployment:
   * GitHub Pages
 
 ## Get Started
