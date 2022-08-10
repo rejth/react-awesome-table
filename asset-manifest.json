@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-awesome-table/static/css/main.d299000a.css",
-    "main.js": "/react-awesome-table/static/js/main.beac54a7.js",
+    "main.css": "/react-awesome-table/static/css/main.73509454.css",
+    "main.js": "/react-awesome-table/static/js/main.0250c515.js",
     "static/media/VTBGroupUI-SemiBold.ttf": "/react-awesome-table/static/media/VTBGroupUI-SemiBold.42e280bc22411b1722d7.ttf",
     "static/media/VTBGroupUI-Medium.otf": "/react-awesome-table/static/media/VTBGroupUI-Medium.e60c01fbb7e7189e5c26.otf",
     "static/media/VTBGroupUI-Regular.otf": "/react-awesome-table/static/media/VTBGroupUI-Regular.525052293c607f29148c.otf",
@@ -36,11 +36,11 @@
     "static/media/MoreVerticalOutline.svg": "/react-awesome-table/static/media/MoreVerticalOutline.a5a5b294294348614ceb2fec0065fdf1.svg",
     "static/media/MoreHorizontalOutline.svg": "/react-awesome-table/static/media/MoreHorizontalOutline.1372a7bf87aaa76dc0ddbcf5dc2ba104.svg",
     "static/media/MinusOutline.svg": "/react-awesome-table/static/media/MinusOutline.b7c9a4a3dd4d0a6c0449d6bd4c8d65c0.svg",
-    "main.d299000a.css.map": "/react-awesome-table/static/css/main.d299000a.css.map",
-    "main.beac54a7.js.map": "/react-awesome-table/static/js/main.beac54a7.js.map"
+    "main.73509454.css.map": "/react-awesome-table/static/css/main.73509454.css.map",
+    "main.0250c515.js.map": "/react-awesome-table/static/js/main.0250c515.js.map"
   },
   "entrypoints": [
-    "static/css/main.d299000a.css",
-    "static/js/main.beac54a7.js"
+    "static/css/main.73509454.css",
+    "static/js/main.0250c515.js"
   ]
 }
