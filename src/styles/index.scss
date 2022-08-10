@@ -20,10 +20,14 @@ body,
 }
 
 body {
+  position: relative;
+  font-size: 100%;
   margin: 0;
+  padding: 60px;
   min-height: 100%;
   overflow-x: hidden;
   font-family: 'VTBGroupUIWebBook', sans-serif;
+  background-color: #ffd194;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
