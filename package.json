@@ -1,8 +1,8 @@
 {
-  "name": "react-awesome-table",
+  "name": "react-custom-table",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rejth.github.io/react-awesome-table",
+  "homepage": "https://rejth.github.io/react-custom-table",
   "dependencies": {
     "@admiral-ds/react-ui": "^1.8.0",
     "@openvtb/admiral-icons": "^2.3.3",
