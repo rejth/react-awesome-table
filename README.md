@@ -9,7 +9,7 @@ This is pretty simple responsive Table with:
 - Sticky columns
 - Overflow menu
 
-[Demo](https://rejth.github.io/react-awesome-table/)
+[Demo](https://rejth.github.io/react-custom-table/)
 
 ## 🧱 Fronend:
 
@@ -38,8 +38,8 @@ Prerequisites:
 To set up the app execute the following commands.
 
 ```bash
-git clone https://github.com/rejth/react-awesome-table.git
-cd react-awesome-table
+git clone https://github.com/rejth/react-custom-table.git
+cd react-custom-table
 npm install
 ```
 
