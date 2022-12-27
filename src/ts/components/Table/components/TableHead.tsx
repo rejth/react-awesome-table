@@ -8,24 +8,22 @@ import MasterCheckbox from './MasterCheckbox';
 import { ITableRow } from '../interfaces/Row';
 
 interface ITableHeadProps {
-  columns: ITableColumn[],
-  rows: ITableRow[],
-  resizeLine: any,
-  sortConfig?: any,
-  updateDraggableColumn: (tempColumns: ITableColumn[]) => void,
-  updateColumnWidth: (id: number, width: number) => void,
-  updateSortConfig?: Function,
+  columns: ITableColumn[];
+  rows: ITableRow[];
+  resizeLine: any;
+  sortConfig?: any;
+  updateDraggableColumn: (tempColumns: ITableColumn[]) => void;
+  updateColumnWidth: (id: number, width: number) => void;
+  updateSortConfig?: Function;
   handleHeaderCheckboxChange?: () => void;
 }
 
 function requestSort(
   property: string,
   sortConfig: any = {},
-  updateSortConfig: Function = () => { },
+  updateSortConfig: Function = () => {},
 ) {
-  const direction = sortConfig?.sort?.direction === 'asc'
-    ? 'desc'
-    : 'asc';
+  const direction = sortConfig?.sort?.direction === 'asc' ? 'desc' : 'asc';
   updateSortConfig({
     filters: sortConfig.filters ?? [],
     sort: { property, direction },
@@ -58,7 +56,7 @@ function TableHead(props: ITableHeadProps): JSX.Element {
   const handleDragEnter = (_e: React.DragEvent<HTMLDivElement>, index: number) => {
     const linePosition = columns
       .filter((_config, id: number) => id <= index)
-      .reduce((width: number, config: any) => (width + config.width), 0);
+      .reduce((width: number, config: any) => width + config.width, 0);
 
     resizeLine.current.style.display = 'block';
     resizeLine.current.style.left = `${linePosition}px`;
@@ -138,7 +136,7 @@ function TableHead(props: ITableHeadProps): JSX.Element {
     // Calculate the resize line offset
     const lineOffset = columns
       .filter((_config, id: number) => id <= index)
-      .reduce((width: number, config: any) => (width + config.width), 0);
+      .reduce((width: number, config: any) => width + config.width, 0);
 
     resizeLine.current.style.display = 'block';
     resizeLine.current.style.left = `${lineOffset}px`;
@@ -155,14 +153,7 @@ function TableHead(props: ITableHeadProps): JSX.Element {
 
   const renderHeaderCell = (column: ITableColumn, index: number) => {
     const {
-      template,
-      properties,
-      title,
-      width,
-      isSortable,
-      isResizable,
-      isDraggable,
-      isDisabled,
+      template, properties, title, width, isSortable, isResizable, isDraggable, isDisabled,
     } = column;
     const isSimpleColumn = template !== ColumnTypesEnum.CHECKBOX
       && template !== ColumnTypesEnum.MENU
@@ -241,17 +232,21 @@ function TableHead(props: ITableHeadProps): JSX.Element {
     );
   };
 
-  const simpleColumns = columns
-    .reduce((cols: React.ReactNode[], col: ITableColumn, index: number) => {
+  const simpleColumns = columns.reduce(
+    (cols: React.ReactNode[], col: ITableColumn, index: number) => {
       if (col.isShow && !col.isFixed) cols.push(renderHeaderCell(col, index));
       return cols;
-    }, []);
+    },
+    [],
+  );
 
-  const stickyColumns = columns
-    .reduce((cols: React.ReactNode[], col: ITableColumn, index: number) => {
+  const stickyColumns = columns.reduce(
+    (cols: React.ReactNode[], col: ITableColumn, index: number) => {
       if (col.isShow && col.isFixed) cols.push(renderHeaderCell(col, index));
       return cols;
-    }, []);
+    },
+    [],
+  );
 
   return (
     <div className="table-header">

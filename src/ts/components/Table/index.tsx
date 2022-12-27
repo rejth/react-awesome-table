@@ -79,7 +79,7 @@ function Table(props: ITable): JSX.Element | null {
     window.addEventListener('resize', updateTableWidth);
     updateTableWidth();
     return () => window.removeEventListener('resize', updateTableWidth);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const isSelected = (row: ITableRow) => row?.selected || false;
@@ -104,11 +104,10 @@ function Table(props: ITable): JSX.Element | null {
 
   const handleHeaderCheckboxChange = (): void => {
     const someRowsChecked = rowList.some(isSelected);
-    const updatedRows = rowList
-      .map((row: ITableRow) => {
-        const isBlocked = isBlockedRow ? isBlockedRow(row) : false;
-        return { ...row, selected: isBlocked ? false : !someRowsChecked };
-      });
+    const updatedRows = rowList.map((row: ITableRow) => {
+      const isBlocked = isBlockedRow ? isBlockedRow(row) : false;
+      return { ...row, selected: isBlocked ? false : !someRowsChecked };
+    });
     if (onRowSelectionChange) {
       const selectedRows = updatedRows.filter(isSelected);
       onRowSelectionChange(selectedRows, selectedRows.map(getRowId));
@@ -129,11 +128,12 @@ function Table(props: ITable): JSX.Element | null {
   };
 
   const resizeColumnWidth = (activeId: number, resizedWidth: number): void => {
-    const columnsWithChangedWidth = columnConfigs.config
-      .map((config: ITableColumn, index: number) => {
+    const columnsWithChangedWidth = columnConfigs.config.map(
+      (config: ITableColumn, index: number) => {
         if (index === activeId) return { ...config, width: resizedWidth };
         return { ...config };
-      });
+      },
+    );
     setColumnConfigs({ config: columnsWithChangedWidth });
   };
 

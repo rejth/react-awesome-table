@@ -15,8 +15,8 @@ import TableCellLink from './cells/CellLink';
 import TableCellDropdown from './cells/CellDropdown';
 
 interface ITableCellProps {
-  column: ITableColumn,
-  row: ITableRow,
+  column: ITableColumn;
+  row: ITableRow;
   isBlocked?: boolean;
   handleCheckboxChange?: (id: RowId) => void;
   handleExpansionChange?: (id: RowId) => void;
@@ -37,11 +37,7 @@ const getSpecificCell = (type: ColumnType) => cells[type];
 
 function TableCell(props: ITableCellProps): JSX.Element | null {
   const {
-    column,
-    row,
-    isBlocked,
-    handleCheckboxChange,
-    handleExpansionChange,
+    column, row, isBlocked, handleCheckboxChange, handleExpansionChange,
   } = props;
 
   const cellValues = column.properties.map(
