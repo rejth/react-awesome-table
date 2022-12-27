@@ -1,28 +1,32 @@
-# 💻 Table component overview
+# 💻 My table component overview
 
 This is pretty simple responsive Table with:
-  * Resizing
-  * Drag-and-Drop
-  * Row expansion
-  * Row selection
-  * Sticky columns
-  * Overflow menu
-  
+
+- Resizing
+- Drag-and-Drop
+- Row expansion
+- Row selection
+- Sticky columns
+- Overflow menu
+
 [Demo](https://rejth.github.io/react-awesome-table/)
 
 ## 🧱 Fronend:
-  * React + React Hooks
-  * TypeScript
-  * SCSS
-  * admiral-ds/react-ui
-  
+
+- React + React Hooks
+- TypeScript
+- SCSS
+- admiral-ds/react-ui
+
 ## 🧪 Test (in progress):
-  * Jest
-  * Testing Library
-  * Storybook
-  
+
+- Jest
+- Testing Library
+- Storybook
+
 ## 🌐 Deployment:
-  * GitHub Pages
+
+- GitHub Pages
 
 ## Get Started
 
