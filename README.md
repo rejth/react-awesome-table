@@ -1,4 +1,4 @@
-# 💻 My table component overview
+# 💻 My custom table component overview
 
 This is pretty simple responsive Table with:
 
